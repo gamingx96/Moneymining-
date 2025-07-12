@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AdBooster UltraX</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      color: #00ff88;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1rem;
+      color: #aaaaaa;
+    }
+    .ad-container {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      position: absolute;
+    }
+  </style>
+  <!-- HEAD Popunder Ad -->
+  <script type='text/javascript' src='//pl27130075.profitableratecpm.com/42/d5/a8/42d5a870405a79bb728a56389ac387c1.js'></script>
+  <!-- Banner Ad (invoke) -->
+  <script async='async' data-cfasync='false' src='//pl27130183.profitableratecpm.com/a511024f4383abc7a7e75781861cd708/invoke.js'></script>
+</head>
+<body>
+  <h1>💥 AdBooster UltraX Active</h1>
+  <p>Auto CTR + Clicks are being super boosted. Just leave this open.</p>
+
+  <!-- Social Bar Ad -->
+  <script type='text/javascript' src='//pl27129944.profitableratecpm.com/5c/02/2b/5c022b69043f4d75a80060a945074c6c.js'></script>
+
+  <!-- Display Container -->
+  <div id="container-a511024f4383abc7a7e75781861cd708" class="ad-container"></div>
+
+  <!-- Multiframe Ad Cloning -->
+  <iframe class="ad-container" src="//pl27129944.profitableratecpm.com/5c/02/2b/5c022b69043f4d75a80060a945074c6c.html"></iframe>
+  <iframe class="ad-container" src="//pl27130183.profitableratecpm.com/a511024f4383abc7a7e75781861cd708.html"></iframe>
+  <iframe class="ad-container" src="//pl27130075.profitableratecpm.com/42/d5/a8/42d5a870405a79bb728a56389ac387c1.html"></iframe>
+
+  <script>
+    function random(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function simulateMovement() {
+      window.scrollBy({ top: random(50, 150), behavior: 'smooth' });
+      window.dispatchEvent(new MouseEvent('mousemove', { bubbles: true }));
+    }
+
+    function simulateClick() {
+      const clickables = document.querySelectorAll('iframe, a, div, button');
+      if (clickables.length > 0) {
+        const el = clickables[Math.floor(Math.random() * clickables.length)];
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => {
+            try {
+              el.click();
+              console.log('[ULTRAX] Clicked:', el);
+            } catch (e) {
+              console.log('[ULTRAX] Click failed:', e);
+            }
+          }, random(700, 2000));
+        }
+      }
+    }
+
+    function cloneAndReloadAds() {
+      const clone = document.createElement('iframe');
+      clone.className = 'ad-container';
+      clone.src = '//pl27130183.profitableratecpm.com/a511024f4383abc7a7e75781861cd708.html';
+      document.body.appendChild(clone);
+    }
+
+    function startBoosting() {
+      setInterval(simulateMovement, random(1000, 2500));
+      setInterval(simulateClick, random(3000, 5000));
+      setInterval(cloneAndReloadAds, 10000);
+      setTimeout(() => location.reload(), random(60000, 120000));
+    }
+
+    window.onload = () => setTimeout(startBoosting, 2000);
+  </script>
+</body>
+</html>
